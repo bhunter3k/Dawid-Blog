@@ -1,12 +1,14 @@
-.cardContainer {
+#projectCardContainer {
 	display: flex;
 	flex-direction: row;
-	justify-content: center;
+	justify-content: flex-start;
 	align-items: flex-start;
 	flex-wrap: wrap;
 	gap: 1rem;
 
 	width: 100%;
+
+	border: 1px solid red;
 
 	.dashCard {
 		display: flex;
@@ -16,7 +18,7 @@
 		border-radius: 0.5rem;
 		padding: 1rem;
 
-		box-shadow: 1px 1px 12px currentColor;
+		// box-shadow: 1px 1px 12px currentColor;
 
 		// calc(33.33% - 10px);. This sets the initial width of each item to approximately one-third of the container's width, minus any desired spacing between columns (in this case, 10px)
 		flex-basis: calc(33% - 10px);

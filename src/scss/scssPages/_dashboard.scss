@@ -1,17 +1,21 @@
 @use "../scssGlobals/index";
 
-.mainContentContainer {
+#dashboardContainer {
 	padding: 1rem;
 
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: flex;
 	align-items: flex-start;
 	gap: 1rem;
+
+	background-color: red;
+	color: red;
+	border: 5px red pink;
 }
 
 @media (max-width: 600px) {
-	.mainContentContainer {
+	#dashboardContainer {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;

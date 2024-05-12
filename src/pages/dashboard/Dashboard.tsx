@@ -8,11 +8,12 @@ type FeatureArrayType = {
 	Heading: string;
 	Image: string;
 	Summary: string;
+	ToolsUsed: string;
 	Link: string;
 }[];
 
 //Initial state of featureArray - an array containing object
-const initialState = [{ Heading: "", Image: "", Summary: "", Link: "" }];
+const initialState = [{ Heading: "", Image: "", Summary: "", ToolsUsed: "", Link: "" }];
 
 const Dashboard = () => {
 	//featureArray state will only accept an array containing an object as defined in FeatureArrayType
@@ -60,31 +61,34 @@ const Dashboard = () => {
 	return (
 		<>
 			<h1>Dashboard:</h1>
-			<p>
-				A page displaying all the different features of the website. Find out more about each feature by clicking the link on its card or using the
-				navigation bar.
-			</p>
+			<h3>
+				A page displaying a portfolio of my projects. Feel free to find out more about each project by click on the project's card or navigating to it
+				using the navbar :)
+			</h3>
 
 			<hr />
 
-			<SearchBar
-				placeholder="Search dashboard by feature title..."
-				onChange={(event) => {
-					setSearchTerm(event.target.value);
-				}}
-			/>
-			<div className="cardContainer">
-				{featureArray.length === 0 ? (
-					<p>Search term not found... Maybe try search by heading of each card...</p>
-				) : (
-					featureArray.map((feature, index) => {
-						return (
-							<>
-								<DashCard key={index} feature={feature} />
-							</>
-						);
-					})
-				)}
+			<div id="dashboardContainer">
+				hello
+				<SearchBar
+					placeholder="Search dashboard by feature title..."
+					onChange={(event) => {
+						setSearchTerm(event.target.value);
+					}}
+				/>
+				<div id="projectCardContainer">
+					{featureArray.length === 0 ? (
+						<p>Search term not found... Maybe try search by heading of each card...</p>
+					) : (
+						featureArray.map((feature, index) => {
+							return (
+								<>
+									<DashCard key={index} feature={feature} />
+								</>
+							);
+						})
+					)}
+				</div>
 			</div>
 		</>
 	);
