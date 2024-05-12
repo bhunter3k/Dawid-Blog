@@ -8,6 +8,7 @@ function App() {
 		<>
 			<Routes>
 				<Route path="/" element={<Dashboard />} />
+				<Route path="/dashboard" element={<Dashboard />} />
 			</Routes>
 			{/* <div className="appContainer">
 				<div className="leftContainer">
