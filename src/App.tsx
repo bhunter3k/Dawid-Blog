@@ -1,17 +1,12 @@
 // import { useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
-// import { Navbar, FooterDesktop, FooterMobile } from "./components/";
-// import { Home, Dashboard, AboutMe, Contact } from "./pages/";
-import { Dashboard } from "./pages/";
+import { Navbar, FooterDesktop, FooterMobile } from "./components/";
+import { Home, Dashboard, AboutMe, Contact } from "./pages/";
 
 function App() {
 	return (
 		<>
-			<Routes>
-				<Route path="/" element={<Dashboard />} />
-				<Route path="/dashboard" element={<Dashboard />} />
-			</Routes>
-			{/* <div className="appContainer">
+			<div className="appContainer">
 				<div className="leftContainer">
 					<Navbar />
 					<FooterDesktop />
@@ -29,7 +24,7 @@ function App() {
 					</div>
 					<FooterMobile />
 				</div>
-			</div> */}
+			</div>
 		</>
 	);
 }
