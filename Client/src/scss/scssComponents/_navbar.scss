@@ -1,0 +1,178 @@
+@use "../scssGlobals/index" as g;
+
+.navbarDesktopContainer,
+.navbarMobileContainerInitial,
+.navbarMobileContainerAfter {
+	height: 100%;
+	// Takes into account the scrollbar
+	width: calc(100vw - (100vw - 100%));
+
+	margin: 0;
+	padding: 0;
+
+	font-weight: 700;
+
+	ul {
+		padding: 0;
+		margin: 0;
+
+		li {
+			//Removes bullet point decoration from li
+			list-style: none;
+
+			#currentPage {
+				color: var(--pseudo-class-colour);
+				border-bottom: none;
+
+				&::before {
+					background-color: var(--pseudo-class-colour);
+					content: "";
+					/*Position is set to absolute to allow underline effect to be placed inside the navbar anchor*/
+					position: absolute;
+					bottom: -5;
+					right: 0;
+					left: 0;
+					height: 2px;
+					/*Resizes the underline effect on the horizontal axis to 0, ensuring it is hidden by default*/
+					scale: 1;
+					/*Sets a transition duration of 400ms allowing for a smooth underline effect*/
+					transition: scale 400ms ease-in-out;
+				}
+			}
+
+			.navbarLink {
+				color: var(--accent-colour);
+				text-decoration: none;
+				border-bottom: thin solid;
+
+				width: 100%;
+				padding: 10px;
+
+				/*Position is set to relative to allow underline effect to sit inside of the navbar anchor*/
+				position: relative;
+				display: flex;
+				flex-direction: row;
+				justify-content: flex-start;
+				align-items: center;
+				gap: 5px;
+
+				/*This transition makes the orange text ease-out to black over 300ms when user isn't hovering over navbar anchor*/
+				transition: color 300ms ease-out, border-bottom 300ms ease-in, transform 300ms ease-in-out;
+
+				/*Colour of navbar anchor will change to orange if the user hovers or focuses on the navbar anchor*/
+				&:hover {
+					color: var(--pseudo-class-colour);
+					border-bottom: thin solid transparent;
+
+					/*Sets a transition duration of 300ms allowing for a smooth change to orange text*/
+					transition: color 300ms ease-in, border-bottom 300ms ease-out;
+				}
+				&::before {
+					background-color: var(--pseudo-class-colour);
+					content: "";
+					/*Position is set to absolute to allow underline effect to be placed inside the navbar anchor*/
+					position: absolute;
+					bottom: 0;
+					right: 0;
+					left: 0;
+					height: 2px;
+					/*Resizes the underline effect on the horizontal axis to 0, ensuring it is hidden by default*/
+					scale: 0;
+					/*Sets a transition duration of 400ms allowing for a smooth underline effect*/
+					transition: scale 400ms ease-in-out;
+				}
+				&:hover::before {
+					/*Resizes the underline effect on the horizontal axis to 1, ensuring it is shown when hovered over*/
+					scale: 1;
+					border-bottom: none;
+				}
+
+				&.dashBoardLink {
+					padding-left: 25px;
+				}
+
+				.navIcon {
+					font-size: 2rem;
+					padding: 2px;
+				}
+			}
+		}
+	}
+
+	//Simulates 4 spaces in Portfolio links to make them look indented
+	.dashBoardLink {
+		padding-left: 18px;
+	}
+}
+
+.navbarMobileContainerInitial,
+.navbarMobileContainerAfter {
+	display: none;
+	border-top: 1px solid var(--accent-colour);
+	// Takes into account the scrollbar
+	width: calc(100vw - (100vw - 100%));
+}
+
+@media (max-width: g.$change-layout-breakpoint) {
+	.navbarDesktopContainer {
+		display: none;
+	}
+
+	.navbarMobileContainerInitial {
+		display: none;
+	}
+
+	.navbarMobileContainerAfter {
+		display: block;
+		margin-top: 0.5rem;
+	}
+
+	// === Enter Transition ===
+	.navbarMobile-enter {
+		max-height: 0px;
+		display: block;
+		ul li {
+			opacity: 0;
+		}
+	}
+	.navbarMobile-enter-active {
+		max-height: 551px;
+		transition: max-height 600ms;
+		ul li {
+			opacity: 1;
+			// need to delay opacity transition by 200ms to let navbar slide down,
+			// and only then increase opacity from 0 to 1.
+			transition: opacity 400ms 200ms;
+		}
+	}
+	.navbarMobile-enter-done {
+		max-height: 551px;
+		display: block;
+		ul li {
+			opacity: 1;
+		}
+	}
+	// === Exit Transition ===
+	.navbarMobile-exit {
+		max-height: 551px;
+		//need to delay the max-height transition to allow opacity transition to fire first,
+		// only then sliding the navbar back up
+		transition: max-height 500ms 100ms;
+		border-top: 1px solid var(--accent-colour);
+		ul li {
+			opacity: 1;
+			transition: opacity 300ms;
+		}
+	}
+	.navbarMobile-exit-active {
+		max-height: 0px;
+		border-top: none;
+
+		ul li {
+			opacity: 0;
+		}
+	}
+	.navbarMobile-exit-done {
+		display: none;
+	}
+}

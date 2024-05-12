@@ -1,0 +1,42 @@
+#dialogDiv {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	max-width: 25rem;
+
+	h3 {
+		text-align: center;
+		white-space: pre-line;
+	}
+
+	#logoutButtons {
+		display: flex;
+		gap: 5px;
+
+		margin-top: 10px;
+
+		.dialogBtn {
+			height: 4rem;
+			width: 10rem;
+
+			position: relative;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			border: 1px solid #cccccc;
+
+			background-color: transparent;
+
+			transition: border-color 300ms ease-in-out;
+			transition: color 250ms ease-in-out;
+
+			&:hover {
+				color: var(--pseudo-class-colour);
+				border-color: var(--pseudo-class-colour);
+			}
+		}
+	}
+}

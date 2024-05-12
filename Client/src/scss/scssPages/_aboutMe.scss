@@ -1,0 +1,25 @@
+#aboutMeContainer {
+	border: 1px solid #cccccc;
+
+	padding: 1rem;
+
+	width: 100%;
+
+	#dawidPhotoImg {
+		float: left;
+		margin-right: 10px;
+		height: 25.5rem;
+		border-radius: 10px;
+	}
+
+	#aboutMeP {
+		font-size: 26px;
+
+		&::first-letter {
+			font-size: 86px;
+			float: left;
+			font-weight: bold;
+			line-height: 2;
+		}
+	}
+}

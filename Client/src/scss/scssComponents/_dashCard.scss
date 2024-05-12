@@ -1,0 +1,66 @@
+.cardContainer {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: flex-start;
+	flex-wrap: wrap;
+	gap: 1rem;
+
+	width: 100%;
+
+	.dashCard {
+		display: flex;
+		flex-direction: column;
+
+		border: 3px solid #cccccc;
+		border-radius: 0.5rem;
+		padding: 1rem;
+
+		box-shadow: 1px 1px 12px currentColor;
+
+		// calc(33.33% - 10px);. This sets the initial width of each item to approximately one-third of the container's width, minus any desired spacing between columns (in this case, 10px)
+		flex-basis: calc(33% - 10px);
+
+		// min-width: 18rem;
+		// min-height: 20rem;
+
+		width: 18rem;
+		height: 27rem;
+
+		h3 {
+			text-align: center;
+			margin: 0;
+		}
+		img {
+			border: 1px solid #cccccc;
+			border-radius: 0.5rem;
+
+			width: 85%;
+			max-height: 10rem;
+			margin-top: 0.5rem;
+
+			align-self: center;
+		}
+		p {
+			margin: 0;
+			margin-top: 0.5rem;
+		}
+		a {
+			margin-top: 0.5rem;
+		}
+	}
+}
+
+@media (max-width: 600px) {
+	.cardContainer {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		// flex-wrap: nowrap;
+		.dashCard {
+			width: 15rem;
+			max-height: 30rem;
+		}
+	}
+}

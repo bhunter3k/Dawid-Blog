@@ -1,0 +1,45 @@
+@use "../scssGlobals/index" as g;
+
+.blogLogoContainer {
+	border-bottom: 1px solid var(--accent-colour);
+
+	width: 100%;
+
+	#logoHeader {
+		display: none;
+	}
+
+	.blogLogo {
+		border-radius: 5px;
+
+		height: 70%;
+		width: 100%;
+		//content is resized proportionally to fit within the container, ensuring that the entire content remains visible without any cropping.
+		object-fit: contain;
+	}
+}
+
+@media (max-width: g.$change-layout-breakpoint) {
+	.blogLogo {
+		display: none;
+	}
+
+	.blogLogoContainer {
+		border-bottom: none;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		width: 100%;
+
+		#logoHeader {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+
+			height: 100px;
+			width: 100%;
+		}
+	}
+}

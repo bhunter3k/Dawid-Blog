@@ -1,0 +1,77 @@
+@use "../scssGlobals/index" as g;
+
+.appContainer {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+
+	.leftContainer {
+		background-color: var(--header-component-colour);
+		// background-image: var(--header-component-colour);
+
+		border-right: 4px solid var(--accent-colour);
+
+		min-width: 6rem;
+		max-width: 25vw;
+		height: 100vh;
+
+		position: fixed;
+		left: 0%;
+
+		display: flex;
+		flex-direction: column;
+	}
+
+	.rightContainer {
+		//calc used to account for width of scrollbar on the page
+		width: calc(75vw - (100vw - 100%));
+		height: 100%;
+
+		margin-left: auto;
+
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+@media (max-width: g.$change-layout-breakpoint) {
+	#root {
+		.appContainer {
+			display: flex;
+			flex-direction: column;
+			.leftContainer {
+				border-right: none;
+				border-bottom: 4px solid var(--accent-colour);
+
+				position: static;
+
+				//calc used to account for width of scrollbar on the page
+				min-width: calc(100vw - (100vw - 100%));
+				height: 100%;
+
+				// padding: 0.4rem;
+
+				display: flex;
+				flex-direction: column;
+				.logoHamburgerContainer {
+					display: flex;
+					flex-direction: row;
+					justify-content: center;
+					align-items: center;
+				}
+			}
+			.rightContainer {
+				margin-left: 0;
+
+				display: flex;
+				flex-direction: column;
+
+				//calc used to account for width of scrollbar on the page
+				width: calc(100vw - (100vw - 100%));
+				//Set height to 100vh to ensure footer stays at the bottom of the screen when there is no content on the page
+				//Example of this is on the PortfolioOverview page when your search does not match my portfolio cards
+				height: 100vh;
+			}
+		}
+	}
+}

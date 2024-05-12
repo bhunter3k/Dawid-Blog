@@ -1,0 +1,108 @@
+@use "colours";
+@use "fonts";
+@use "breakpoints";
+
+html {
+	box-sizing: border-box;
+	font-size: 100%;
+	min-width: 320px;
+	scroll-behavior: smooth;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: var(--page-colour);
+	color: var(--font-colour);
+	font-family: var(--font-family);
+	font-size: var(--font-size);
+
+	//Smooth fade-in animation for when a page loads
+	animation: fadeInAnimation ease 1s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+
+	@keyframes fadeInAnimation {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	width: 100%;
+
+	color: var(--accent-colour);
+}
+
+p {
+	margin: 0;
+}
+
+button,
+input[type="datetime-local"],
+input[type="datetime"],
+input::-webkit-calendar-picker-indicator {
+	cursor: pointer;
+	font: var(--font-family);
+	color: var(--accent-colour);
+}
+
+button[disabled] {
+	/* Apply styles to the button when it is disabled */
+	opacity: 0.5; /* Example: reduce opacity */
+	cursor: not-allowed; /* Example: change cursor to not-allowed */
+}
+
+button {
+	font-size: var(--button-font-size);
+}
+
+input {
+	&::placeholder {
+		font-size: var(--placeholder-font-size);
+	}
+}
+
+textarea {
+	font-size: var(--button-font-size);
+}
+
+label {
+	font-size: var(--label-font-size);
+}
+
+a {
+	color: blue;
+	transform: scale(1);
+	transition: transform 300ms ease-in-out, color 300ms ease-in-out;
+
+	&:active,
+	&:hover {
+		color: var(--pseudo-class-colour);
+		transform: scale(1.02);
+	}
+}
+
+dialog {
+	z-index: 20;
+}
+
+hr {
+	width: 100%;
+}

@@ -1,0 +1,60 @@
+@use "../scssGlobals/index";
+
+#searchBarContainer {
+	position: relative;
+
+	width: 50%;
+	transition: color 300ms ease-in-out;
+
+	&:hover,
+	&:focus {
+		color: var(--focus-colour);
+	}
+
+	#searchBar {
+		font-size: 25px;
+
+		width: 100%;
+		height: 3rem;
+
+		padding-left: 10px;
+
+		border: 2px solid #cccccc;
+		border-radius: 0.5rem;
+
+		transition: border-color 300ms ease-in-out;
+
+		&:hover,
+		&:focus {
+			outline: none !important;
+			border-color: var(--pseudo-class-colour);
+		}
+	}
+
+	#searchIcon {
+		width: 1.5rem;
+		height: 1.5rem;
+
+		position: absolute;
+		top: 50%; /* Vertically center */
+		transform: translateY(-50%); /* Center vertically */
+		right: 10px;
+	}
+}
+
+@media (max-width: 600px) {
+	#searchBarContainer {
+		#searchBar {
+			margin-bottom: 1rem;
+		}
+	}
+}
+
+@media (max-width: 380px) {
+	#searchBarContainer {
+		width: 15rem;
+		#searchBar {
+			width: 15rem;
+		}
+	}
+}

@@ -1,0 +1,309 @@
+/*Mixins used to create re-usable styles that can be used across SCSS stylesheets*/
+/*Functions used to create complex and re-usable operations that can be used across SCSS stylesheets*/
+
+@mixin submitButton {
+	color: var(--default-component-font-colour);
+	background-color: var(--default-button-colour);
+	border: 3px solid white;
+	border-radius: 5px;
+	font-weight: bold;
+	min-height: 2.5rem;
+	width: 30%;
+	/*Position is set to relative to allow "border expand effect" to be placed over the button*/
+	position: relative;
+	align-self: center;
+	cursor: pointer;
+
+	&::before {
+		/*Position is set to absolute to allow "border expand effect" to be placed inside the button*/
+		position: absolute;
+		content: "";
+		top: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		/*Z-index is set to -1 to hide the "border expand effect" if button isn't hovered over or focused on*/
+		z-index: -1;
+		border: none;
+		border-radius: 5px;
+		/*Sets a transition duration of 400ms allowing for a smooth expand effect*/
+		transition: 400ms;
+	}
+	&:hover::before {
+		border: 3px solid white;
+		top: calc(3px * -3);
+		bottom: calc(3px * -3);
+		right: calc(3px * -3);
+		left: calc(3px * -3);
+		/*Z-index is set to 1 to show the "border expand effect" if button if hovered or focused on*/
+		z-index: 1;
+		transition: 200ms;
+	}
+}
+
+@mixin backTopButton {
+	/*Inherit everything from submitButton mixin*/
+	@include submitButton;
+	color: var(--default-page-font-colour);
+	border: 3px solid black;
+	/*Hide back to top button until user scrolls down on page*/
+	display: none;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	bottom: 1.5%;
+	right: 1.5%;
+	width: 2.5rem;
+	height: 2.5rem;
+	border-radius: 4px;
+	z-index: 1;
+	/*Colour of button will change to green if the user hovers or focuses on the button*/
+	&:hover,
+	&:focus {
+		color: rgb(0, 221, 62);
+		/*Sets a transition duration of 300ms allowing for a smooth change to green text*/
+		transition: 300ms;
+	}
+	&:focus::before,
+	&:hover::before {
+		border: 3px solid rgb(0, 221, 62);
+		top: calc(3px * -3);
+		bottom: calc(3px * -3);
+		right: calc(3px * -3);
+		left: calc(3px * -3);
+	}
+	.gg-push-up {
+		color: var(--default-component-font-colour);
+	}
+}
+
+@mixin dietButton {
+	color: white;
+	background-color: var(--default-button-colour);
+	border: 1px solid black;
+	border-radius: 5px;
+	font-weight: bold;
+	align-self: flex-start;
+	width: 60%;
+	height: 4vh;
+	cursor: pointer;
+	/*Position is set to relative to allow underline effect to sit inside of the button*/
+	position: relative;
+	/*This transition makes the green text ease-out to black over 300ms when user isn't hovering over button*/
+	transition: 300ms ease-out;
+
+	/*Colour of button will change to green if the user hovers or focuses on the button*/
+	&:hover {
+		color: rgb(0, 221, 62);
+		/*Sets a transition duration of 300ms allowing for a smooth change to green text*/
+		transition: 300ms ease-in;
+	}
+	&::before {
+		content: "";
+		/*Position is set to absolute to allow underline effect to be placed inside the button*/
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		height: 2px;
+		background-color: black;
+		/*Resizes the underline effect on the horizontal axis to 0, ensuring it is hidden by default*/
+		transform: scaleX(0);
+		/*Sets a transition duration of 200ms allowing for a smooth underline effect*/
+		transition: transform 200ms ease-in-out;
+	}
+	&:hover::before {
+		/*Resizes the underline effect on the horizontal axis to 1, ensuring it is shown when hovered over*/
+		transform: scaleX(1);
+	}
+}
+
+@mixin logoutButton {
+	/*Inherit everything from submitButton mixin*/
+	@include submitButton;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	.gg-check-o,
+	.gg-close-o {
+		margin-left: 3px;
+	}
+	&#confirmBtn {
+		color: greenyellow;
+	}
+	&#cancelBtn {
+		color: rgb(189, 5, 5);
+	}
+}
+
+@mixin showPasswordEye {
+	font-size: var(--default-eye-size);
+	/*Position is set to absolute to allow eye icons to be placed inside the password field*/
+	position: absolute;
+	top: 32%;
+	right: 1%;
+	cursor: pointer;
+	transition: 500ms;
+
+	/*Colour of eye icon will change to green if the user hovers or focuses on the icon*/
+	&:hover,
+	&:focus {
+		color: rgb(14, 124, 0);
+		font-size: calc(var(--default-eye-size) + 2px);
+		/*Sets a transition duration of 300ms allowing for a smooth expand effect*/
+		transition: 300ms;
+	}
+}
+
+@mixin defaultLogoStyle {
+	max-width: 100%;
+	margin: 1rem;
+	align-self: center;
+}
+
+@mixin defaultFooter {
+	background: var(--authentication-window-colour);
+	color: var(--default-component-font-colour);
+	border-top: #c300ff 6px solid;
+	/*Margin-top is set to auto to ensure footer is "stuck to the bottom of the page"*/
+	margin-top: auto;
+	padding: 1.8rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	.logout {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		padding: 5px;
+		cursor: pointer;
+		&:hover,
+		&:focus {
+			color: rgb(202, 0, 0);
+			border-bottom: solid;
+			/*Sets a transition duration of 300ms allowing for a smooth expand effect*/
+			transition: 300ms;
+		}
+		#logoutIcon {
+			margin: 0;
+			/*Ensures a 15px space between Logout text and logoutIcon*/
+			margin-right: 15px;
+		}
+	}
+	.contactUs {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		padding: 5px;
+		a {
+			/*Ensures a 4.4px space between Contact Us: text and the email*/
+			margin-left: 4.4px;
+		}
+	}
+}
+
+@mixin defaultLogoutDialog {
+	color: var(--default-component-font-colour);
+	background-color: var(--authentication-window-colour);
+	padding: 1rem;
+	/*Display is initially set to none to ensure logout dialog box is hidden*/
+	display: none;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	min-width: 40vw;
+	min-height: 30vh;
+	border: 6px #c300ff solid;
+	border-radius: 6px;
+	/*Below code is used to center the logoutContainer in the middle of the page*/
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	/*Below above is used to center the logoutContainer in the middle of the page*/
+
+	.logoutButtons {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
+		align-items: center;
+		width: 100%;
+		/*Inherit style from logoutButton mixin*/
+		.logoutBtn {
+			@include logoutButton;
+		}
+	}
+	/*When the logout dialog is open, apply the fadeIn animation over 600ms*/
+	&[open] {
+		animation: fadeIn 600ms;
+	}
+	/*Set the backdrop pseudo element of the logout dialog to a pale dark colour*/
+	&::backdrop {
+		background: rgba(0 0 0 / 0.7);
+	}
+	/*When the logout dialog is open, apply the fadeIn animation over 600ms to its backdrop pseudo element*/
+	&[open]::backdrop {
+		animation: fadeIn 600ms;
+	}
+	/*Basic custom animation to fade in the logout dialog*/
+	@keyframes fadeIn {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+}
+
+@mixin defaultHeader {
+	font-size: var(--default-nav-font-size);
+	background: var(--authentication-window-colour);
+	border-bottom: #c300ff 6px solid;
+	padding: 1vh 3vw 0 3vw;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: flex-end;
+	position: relative;
+
+	& #mobileNavMenu {
+		font-size: 45px;
+		display: none;
+		cursor: pointer;
+		/*Colour of nav menu icon will change to green if the user hovers or focuses on the icon*/
+		&:hover,
+		&:focus {
+			color: rgb(14, 124, 0);
+			/*Sets a transition duration of 300ms allowing for a smooth expand effect*/
+			transition: 300ms;
+		}
+	}
+	& ul {
+		padding: 0;
+	}
+	& a {
+		color: var(--default-component-font-colour);
+		border: none;
+		text-decoration: none;
+		text-transform: uppercase;
+	}
+	& li {
+		padding: 0 10px 0 10px;
+		list-style: none;
+		display: inline-block;
+	}
+	& .currentPage a {
+		font-weight: bolder;
+		border-bottom: solid;
+	}
+	& #healthTrackerLogo {
+		/*Inherit style from defaultLogoStyle mixin*/
+		@include defaultLogoStyle;
+	}
+}

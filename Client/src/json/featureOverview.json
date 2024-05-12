@@ -1,0 +1,38 @@
+[
+	{
+		"Heading": "Mood Rating",
+		"Image": "/MoodTrackerIdea.jpg",
+		"Summary": "Rate your mood through out the day using the mood tracker scale.",
+		"Link": "/ratingPage"
+	},
+	{
+		"Heading": "Journal",
+		"Image": "/MoodJournal.jpg",
+		"Summary": "Write in journal entries about your thoughts and feelings throughout the day!",
+		"Link": "/journalPage"
+	},
+	{
+		"Heading": "Selfie",
+		"Image": "/MoodSelfie.jpg",
+		"Summary": "Take a selfie of how you are currently feeling :)",
+		"Link": "/selfiePage"
+	},
+	{
+		"Heading": "Advice/Activities - Not Implemented",
+		"Image": "/Recommendations.png",
+		"Summary": "View our tailored advice about your current stress level and how to manage it. Practice mindfulness and participate in our breathing exercise activity during a rainy day!",
+		"Link": "/recommendationsPage"
+	},
+	{
+		"Heading": "History/Statistics - Not Implemented",
+		"Image": "/StatisticsIdea.png",
+		"Summary": "View your past stress statistics, phrases and scenarios that cause you stress, and most common emotions displayed in your selfies.",
+		"Link": "/statsPage"
+	},
+	{
+		"Heading": "Contact Me",
+		"Image": "/Contact.png",
+		"Summary": "Feel free to contact the research if you have any questions or run into any problems :)",
+		"Link": "/contactPage"
+	}
+]

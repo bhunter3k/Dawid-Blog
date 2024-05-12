@@ -1,0 +1,75 @@
+@use "../scssGlobals/index" as g;
+
+.hamburgerMenuBtn {
+	display: none;
+	margin-right: 0.5rem;
+	background-color: transparent;
+	border: 2px solid var(--accent-colour);
+	border-radius: 0.5rem;
+
+	box-shadow: 3px 3px 10px currentColor;
+
+	cursor: pointer;
+
+	transition: border 350ms ease-out;
+
+	& .line {
+		color: var(--accent-colour);
+		transform-box: fill-box;
+		//ensures lines rotate around their centre
+		transform-origin: center center;
+		//transition: 1) rotate top and middle lines back, 2) move top and bottom lines back, 3) show middle line using opacity
+		transition: color 400ms ease-out, transform 200ms ease-out 200ms, rotate 200ms ease-in, opacity 200ms 400ms;
+	}
+
+	&[aria-expanded="false"] {
+		&:hover {
+			box-shadow: 0 0 10px greenyellow;
+			border: 2px solid greenyellow;
+			& .line {
+				color: greenyellow;
+			}
+		}
+	}
+
+	&[aria-expanded="true"] {
+		box-shadow: 0 0 10px greenyellow;
+		border: 2px solid greenyellow;
+		transition: border 400ms ease-in, box-shadow 400ms ease-in;
+
+		&:hover {
+			border: 2px solid red;
+			box-shadow: 0 0 10px rgb(249, 130, 124);
+
+			& .line {
+				color: red;
+			}
+		}
+
+		& .line {
+			color: greenyellow;
+			//transition: 1) hide middle line using opacity, 2) move top and bottom lines to middle, 3) rotate top and bottom lines
+			transition: color 400ms ease-in, transform 200ms ease-in 150ms, rotate 200ms ease-in 400ms, opacity 150ms;
+		}
+
+		& .line {
+			&.top {
+				transform: translateY(25px) rotate(45deg);
+			}
+			&.bottom {
+				transform: translateY(-25px) rotate(-45deg);
+			}
+		}
+
+		//hide middle line
+		& .line.middle {
+			opacity: 0;
+		}
+	}
+}
+
+@media (max-width: g.$change-layout-breakpoint) {
+	.hamburgerMenuBtn {
+		display: flex;
+	}
+}
