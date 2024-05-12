@@ -6,7 +6,10 @@ import { Home, Dashboard, AboutMe, Contact } from "./pages/";
 function App() {
 	return (
 		<>
-			<div className="appContainer">
+			<Routes>
+				<Route path="/" element={<Dashboard />} />
+			</Routes>
+			{/* <div className="appContainer">
 				<div className="leftContainer">
 					<Navbar />
 					<FooterDesktop />
@@ -24,7 +27,7 @@ function App() {
 					</div>
 					<FooterMobile />
 				</div>
-			</div>
+			</div> */}
 		</>
 	);
 }
