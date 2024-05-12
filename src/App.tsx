@@ -1,5 +1,5 @@
 // import { useState, useEffect } from "react";
-import { Route, Routes, Navigate } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { Navbar, FooterDesktop, FooterMobile } from "./components/";
 import { Home, Dashboard, AboutMe, Contact } from "./pages/";
 
@@ -15,7 +15,7 @@ function App() {
 					<div className="mainContentContainer">
 						<Routes>
 							<Route path="/homePage" element={<Home />} />
-							<Route path="/" element={<Navigate to="/loginPage" />} />
+							<Route path="/" element={<Dashboard />} />
 							<Route path="/dashboardPage" element={<Dashboard />} />
 
 							<Route path="/aboutMePage" element={<AboutMe />} />
