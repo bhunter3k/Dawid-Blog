@@ -1,0 +1,35 @@
+{
+	"name": "dawid-blog",
+	"version": "1.0.0",
+	"description": "A website showcasing a portfolio of my projects and my blog entries.",
+	"main": "index.js",
+	"scripts": {
+		"client": "cd Client && npm run client",
+		"watchAppTS": "cd Server && npm run watchAppTS",
+		"server": "cd Server && npm run server",
+		"serverTS": "concurrently \"npm run watchAppTS\" \"npm run server\"",
+		"app": "concurrently \"npm run watchAppTS\" \"npm run client\" \"npm run server\""
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/bhunter3k/Dawid-Blog.git"
+	},
+	"keywords": [
+		"dawidklos",
+		"dawid",
+		"klos",
+		"portfolio",
+		"projects",
+		"blog",
+		"dawid's blog"
+	],
+	"author": "Dawid Klos (bhunter3k)",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/bhunter3k/Dawid-Blog/issues"
+	},
+	"homepage": "https://github.com/bhunter3k/Dawid-Blog#readme",
+	"devDependencies": {
+		"concurrently": "^8.2.1"
+	}
+}

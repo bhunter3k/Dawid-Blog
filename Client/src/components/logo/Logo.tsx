@@ -1,11 +1,11 @@
-import logoDesign3 from "../../assets/LogoDesign3.png";
+import logoDesign from "../../assets/1st-Idea-NB.png";
 
 const Logo = () => {
 	return (
 		<>
 			<div className="blogLogoContainer">
-				<img src={logoDesign3} alt="Dawid's Blog Logo" className="blogLogo" loading="eager" />
-				<h1 id="logoHeader">You Are Not Your Thoughts!</h1>
+				<img src={logoDesign} alt="Dawid's Blog Logo" className="blogLogo" loading="eager" />
+				<h1 id="logoHeader">Dawid's Blog</h1>
 			</div>
 		</>
 	);
