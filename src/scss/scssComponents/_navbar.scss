@@ -3,6 +3,7 @@
 .navbarDesktopContainer,
 .navbarMobileContainerInitial,
 .navbarMobileContainerAfter {
+	color: var(--component-font-colour);
 	height: 100%;
 	// Takes into account the scrollbar
 	width: calc(100vw - (100vw - 100%));
@@ -10,7 +11,7 @@
 	margin: 0;
 	padding: 0;
 
-	font-weight: 700;
+	font-weight: 100;
 
 	ul {
 		padding: 0;
@@ -41,7 +42,7 @@
 			}
 
 			.navbarLink {
-				color: var(--accent-colour);
+				color: var(--component-font-colour);
 				text-decoration: none;
 				border-bottom: thin solid;
 

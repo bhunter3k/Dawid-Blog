@@ -6,20 +6,20 @@ import { Home, Dashboard, AboutMe, Contact } from "./pages/";
 function App() {
 	return (
 		<>
-			<div className="appContainer">
-				<div className="leftContainer">
+			<div id="appContainer">
+				<div id="leftContainer">
 					<Navbar />
 					<FooterDesktop />
 				</div>
-				<div className="rightContainer">
-					<div className="mainContentContainer">
+				<div id="rightContainer">
+					<div id="mainContentContainer">
 						<Routes>
-							<Route path="/homePage" element={<Home />} />
-							<Route path="/" element={<Dashboard />} />
-							<Route path="/dashboardPage" element={<Dashboard />} />
+							<Route path="/home" element={<Home />} />
+							<Route path="/" element={<Home />} />
+							<Route path="/dashboard" element={<Dashboard />} />
 
-							<Route path="/aboutMePage" element={<AboutMe />} />
-							<Route path="/contactPage" element={<Contact />} />
+							<Route path="/aboutMe" element={<AboutMe />} />
+							<Route path="/contact" element={<Contact />} />
 						</Routes>
 					</div>
 					<FooterMobile />

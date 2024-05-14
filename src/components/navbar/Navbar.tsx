@@ -18,50 +18,50 @@ const NavbarTemplate = () => {
 	return (
 		<ul>
 			<li>
-				<Link to="/homePage" className="navbarLink" id={isCurrent("/homePage") ? "currentPage" : ""}>
+				<Link to="/home" className="navbarLink" id={isCurrent("/home") ? "current" : ""}>
 					<FaHome className="navIcon" />
 					Home
 				</Link>
 			</li>
 			<li>
-				<Link to="/dashboardPage" className="navbarLink" id={isCurrent("/dashboardPage") ? "currentPage" : ""}>
+				<Link to="/dashboard" className="navbarLink" id={isCurrent("/dashboard") ? "current" : ""}>
 					<RxDashboard className="navIcon" />
 					Feature Dashboard
 				</Link>
 			</li>
 			<li>
-				<Link to="/ratingPage" className="navbarLink dashBoardLink" id={isCurrent("/ratingPage") ? "currentPage" : ""}>
+				<Link to="/rating" className="navbarLink dashBoardLink" id={isCurrent("/rating") ? "current" : ""}>
 					1) Rate Today's Mood
 				</Link>
 			</li>
 			<li>
-				<Link to="/journalPage" className="navbarLink dashBoardLink" id={isCurrent("/journalPage") ? "currentPage" : ""}>
+				<Link to="/journal" className="navbarLink dashBoardLink" id={isCurrent("/journal") ? "current" : ""}>
 					2) Journal
 				</Link>
 			</li>
 			<li>
-				<Link to="/selfiePage" className="navbarLink dashBoardLink" id={isCurrent("/selfiePage") ? "currentPage" : ""}>
+				<Link to="/selfie" className="navbarLink dashBoardLink" id={isCurrent("/selfie") ? "current" : ""}>
 					3) Selfie
 				</Link>
 			</li>
 			<li>
-				<Link to="/recommendationsPage" className="navbarLink dashBoardLink" id={isCurrent("/recommendationsPage") ? "currentPage" : ""}>
+				<Link to="/recommendations" className="navbarLink dashBoardLink" id={isCurrent("/recommendations") ? "current" : ""}>
 					4) Advice/Activities
 				</Link>
 			</li>
 			<li>
-				<Link to="/statsPage" className="navbarLink dashBoardLink" id={isCurrent("/statsPage") ? "currentPage" : ""}>
+				<Link to="/stats" className="navbarLink dashBoardLink" id={isCurrent("/stats") ? "current" : ""}>
 					5) History/Statistics
 				</Link>
 			</li>
 			<li>
-				<Link to="/contactPage" className="navbarLink" id={isCurrent("/contactPage") ? "currentPage" : ""}>
+				<Link to="/contact" className="navbarLink" id={isCurrent("/contact") ? "current" : ""}>
 					<FaPhoneSquareAlt className="navIcon" />
 					Contact
 				</Link>
 			</li>
 			<li>
-				<Link to="/aboutMePage" className="navbarLink" id={isCurrent("/aboutMePage") ? "currentPage" : ""}>
+				<Link to="/aboutMe" className="navbarLink" id={isCurrent("/aboutMe") ? "current" : ""}>
 					<FaUserAlt className="navIcon" />
 					About Me
 				</Link>

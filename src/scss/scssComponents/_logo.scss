@@ -1,15 +1,11 @@
 @use "../scssGlobals/index" as g;
 
-.blogLogoContainer {
+#blogLogoContainer {
 	border-bottom: 1px solid var(--accent-colour);
 
 	width: 100%;
 
-	#logoHeader {
-		display: none;
-	}
-
-	.blogLogo {
+	#blogLogo {
 		border-radius: 5px;
 
 		height: 70%;
@@ -20,11 +16,11 @@
 }
 
 @media (max-width: g.$change-layout-breakpoint) {
-	.blogLogo {
+	#blogLogo {
 		display: none;
 	}
 
-	.blogLogoContainer {
+	#blogLogoContainer {
 		border-bottom: none;
 		display: flex;
 		justify-content: center;
