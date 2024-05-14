@@ -7,7 +7,7 @@ export const FooterDesktop = () => {
 				</h3>
 				<div id="contactDetailsContainer">
 					<p>
-						Email: <a href="mailto:tpd20seu@uea.ac.uk">tpd20seu@uea.ac.uk</a>
+						Email: <a href="mailto:@uea.ac.uk"></a>
 					</p>
 					<p>
 						Github: <a href="https://github.com/bhunter3k">bhunter3k</a>
@@ -26,7 +26,7 @@ export const FooterMobile = () => {
 					<u>Contact Details</u>
 				</h3>
 				<br />
-				<p>Email: tpd20seu@uea.ac.uk</p>
+				<p>Email: </p>
 				<br />
 				<p>Github: bhunter3k</p>
 			</div>
