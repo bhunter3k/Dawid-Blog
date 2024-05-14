@@ -1,4 +1,4 @@
-import logoDesign from "../../assets/1st-Idea-NB.png";
+// import logoDesign from "../../assets/1st-Idea-NB.png";
 
 const Logo = () => {
 	return (
