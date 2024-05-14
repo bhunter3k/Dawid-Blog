@@ -4,33 +4,35 @@
 	display: flex;
 	flex-direction: row;
 	align-items: flex-start;
+	width: 100vw;
+	height: 100vh;
 
 	#leftContainer {
-		background-color: var(--component-colour);
-		// background-image: var(--component-colour);
-
-		border-right: 4px solid var(--accent-colour);
-
-		min-width: 6rem;
-		max-width: 25vw;
-		height: 100vh;
+		display: flex;
+		flex-direction: column;
 
 		position: fixed;
 		left: 0%;
 
-		display: flex;
-		flex-direction: column;
+		min-width: 6rem;
+		max-width: 20vw;
+		height: 100vh;
+
+		background-color: var(--component-colour);
+		// background-image: var(--component-colour);
+
+		border-right: 4px solid var(--accent-colour);
 	}
 
 	#rightContainer {
+		display: flex;
+		flex-direction: column;
+
 		//calc used to account for width of scrollbar on the page
-		width: calc(75vw - (100vw - 100%));
+		width: calc(80vw - (100vw - 100%));
 		height: 100%;
 
 		margin-left: auto;
-
-		display: flex;
-		flex-direction: column;
 	}
 }
 

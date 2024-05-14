@@ -22,6 +22,7 @@ body {
 	color: var(--font-colour);
 	font-family: var(--font-family);
 	font-size: var(--font-size);
+	font-weight: var(--font-weight);
 
 	//Smooth fade-in animation for when a page loads
 	animation: fadeInAnimation ease 1s;
