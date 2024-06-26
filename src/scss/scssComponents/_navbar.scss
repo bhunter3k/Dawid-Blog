@@ -3,10 +3,10 @@
 .navbarDesktopContainer,
 .navbarMobileContainerInitial,
 .navbarMobileContainerAfter {
-	color: var(--component-font-colour);
+	// color: var(--component-font-colour);
 	height: 100%;
 	// Takes into account the scrollbar
-	width: calc(100vw - (100vw - 100%));
+	// width: calc(100vw - (100vw - 100%));
 
 	margin: 0;
 	padding: 0;

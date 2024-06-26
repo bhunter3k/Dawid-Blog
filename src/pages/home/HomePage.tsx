@@ -7,7 +7,7 @@ export const Home = () => {
 			<hr />
 			<p>test</p>
 
-			<img src={dawidPhoto} alt="Dawid's Blog Logo" id="blogLogo" loading="eager" />
+			{/* <img src={dawidPhoto} alt="Dawid's Blog Logo" id="blogLogo" loading="eager" /> */}
 		</>
 	);
 };

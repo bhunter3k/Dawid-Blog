@@ -1,6 +1,6 @@
 // import logoDesign from "../../assets/1st-Idea-NB.png";
 
-const Logo = () => {
+export const Logo = () => {
 	return (
 		<>
 			<div id="blogLogoContainer">
@@ -11,5 +11,3 @@ const Logo = () => {
 		</>
 	);
 };
-
-export default Logo;

@@ -15,7 +15,7 @@ type FeatureArrayType = {
 //Initial state of featureArray - an array containing object
 const initialState = [{ Heading: "", Image: "", Summary: "", ToolsUsed: "", Link: "" }];
 
-const Dashboard = () => {
+export const Dashboard = () => {
 	//featureArray state will only accept an array containing an object as defined in FeatureArrayType
 	const [featureArray, setFeatureArray] = useState<FeatureArrayType>(initialState);
 	const [searchTerm, setSearchTerm] = useState<string>("");
@@ -93,5 +93,3 @@ const Dashboard = () => {
 		</>
 	);
 };
-
-export default Dashboard;

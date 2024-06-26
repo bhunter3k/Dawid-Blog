@@ -1,0 +1,111 @@
+@use "../scssGlobals/index" as g;
+
+#appContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	width: 100%;
+	height: 100%;
+
+	#topContainer {
+		position: fixed;
+		top: 0%;
+
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		gap: 1rem;
+		z-index: 1000;
+
+		height: 6rem;
+		width: 100%;
+
+		padding: 1rem;
+
+		background-color: red;
+
+		border-bottom: 3px solid var(--accent-colour);
+	}
+
+	#bottomContainer {
+		display: flex;
+		justify-content: flex-start;
+		margin-top: 6rem;
+
+		#leftContainer {
+			display: flex;
+			flex-direction: column;
+			z-index: 999;
+
+			width: clamp(19rem, 25%, 25rem);
+
+			background-color: var(--component-colour);
+			border-right: 3px solid var(--accent-colour);
+
+			#navbarContainer {
+				margin-top: 6rem;
+
+				position: fixed;
+				top: 0%;
+				height: 100%;
+			}
+
+			hr {
+				width: 90%;
+				color: var(--accent-colour);
+			}
+		}
+
+		#rightContainer {
+			display: flex;
+			flex-direction: column;
+
+			width: 100%;
+			height: 100%;
+
+			padding: 1rem;
+		}
+	}
+}
+
+// @media (max-width: g.$change-layout-breakpoint) {
+// 	#root {
+// 		#appContainer {
+// 			display: flex;
+// 			flex-direction: column;
+// 			#leftContainer {
+// 				border-right: none;
+// 				border-bottom: 4px solid var(--accent-colour);
+
+// 				position: static;
+
+// 				//calc used to account for width of scrollbar on the page
+// 				min-width: calc(100vw - (100vw - 100%));
+// 				height: 100%;
+
+// 				// padding: 0.4rem;
+
+// 				display: flex;
+// 				flex-direction: column;
+// 				.logoHamburgerContainer {
+// 					display: flex;
+// 					flex-direction: row;
+// 					justify-content: center;
+// 					align-items: center;
+// 				}
+// 			}
+// 			#rightContainer {
+// 				margin-left: 0;
+
+// 				display: flex;
+// 				flex-direction: column;
+
+// 				//calc used to account for width of scrollbar on the page
+// 				width: calc(100vw - (100vw - 100%));
+// 				//Set height to 100vh to ensure footer stays at the bottom of the screen when there is no content on the page
+// 				//Example of this is on the PortfolioOverview page when your search does not match my portfolio cards
+// 				height: 100vh;
+// 			}
+// 		}
+// 	}
+// }
