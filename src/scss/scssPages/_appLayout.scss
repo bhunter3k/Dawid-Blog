@@ -64,6 +64,12 @@
 			height: 100%;
 
 			padding: 1rem;
+
+			#mainContentContainer {
+				width: 100%;
+
+				border: 2px solid black;
+			}
 		}
 	}
 }
