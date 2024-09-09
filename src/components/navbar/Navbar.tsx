@@ -1,6 +1,5 @@
-import { useState, useEffect } from "react";
+import { forwardRef } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { CSSTransition } from "react-transition-group";
 
 // Import react-icons
 import { FaHome, FaUserAlt, FaPhoneSquareAlt } from "react-icons/fa";
@@ -14,7 +13,7 @@ export const Navbar = () => {
 	}
 
 	return (
-		<div id="navbarContainer">
+		<>
 			<ul>
 				<li>
 					<Link to="/home" className="navbarLink" id={isCurrent("/home") ? "current" : ""}>
@@ -66,6 +65,6 @@ export const Navbar = () => {
 					</Link>
 				</li>
 			</ul>
-		</div>
+		</>
 	);
 };

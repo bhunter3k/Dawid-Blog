@@ -39,9 +39,9 @@
 			position: fixed;
 			height: 100%;
 
-			width: clamp(19rem, 25%, 25rem);
+			padding-right: 10px;
 
-			// background-color: var(--component-colour);
+			background-color: var(--component-colour);
 			border-right: 3px solid var(--accent-colour);
 
 			hr {
@@ -50,28 +50,23 @@
 			}
 		}
 
-		.alert-enter {
-			opacity: 0;
-			background-color: red;
-			transform: scale(0.9);
-		}
-		.alert-enter-active {
-			opacity: 1;
-			transform: translateX(0);
-			transition: opacity 300ms, transform 300ms;
-		}
-		.alert-enter-done {
-			background-color: red;
-			border: 5px solid pink;
+		.enter {
+			width: 0;
 		}
 
-		.alert-exit {
-			opacity: 1;
+		.enter-active {
+			width: clamp(19rem, 25%, 25rem);
+			transition: width 300ms ease-in;
 		}
-		.alert-exit-active {
-			opacity: 0;
-			transform: scale(0.9);
-			transition: opacity 300ms, transform 300ms;
+
+		.exit {
+			width: clamp(19rem, 25%, 25rem);
+		}
+
+		.exit-active {
+			width: 0;
+			color: transparent;
+			transition: width 300ms ease-out;
 		}
 
 		#rightContainer {
@@ -91,45 +86,3 @@
 		}
 	}
 }
-
-// @media (max-width: g.$change-layout-breakpoint) {
-// 	#root {
-// 		#appContainer {
-// 			display: flex;
-// 			flex-direction: column;
-// 			#leftContainer {
-// 				border-right: none;
-// 				border-bottom: 4px solid var(--accent-colour);
-
-// 				position: static;
-
-// 				//calc used to account for width of scrollbar on the page
-// 				min-width: calc(100vw - (100vw - 100%));
-// 				height: 100%;
-
-// 				// padding: 0.4rem;
-
-// 				display: flex;
-// 				flex-direction: column;
-// 				.logoHamburgerContainer {
-// 					display: flex;
-// 					flex-direction: row;
-// 					justify-content: center;
-// 					align-items: center;
-// 				}
-// 			}
-// 			#rightContainer {
-// 				margin-left: 0;
-
-// 				display: flex;
-// 				flex-direction: column;
-
-// 				//calc used to account for width of scrollbar on the page
-// 				width: calc(100vw - (100vw - 100%));
-// 				//Set height to 100vh to ensure footer stays at the bottom of the screen when there is no content on the page
-// 				//Example of this is on the PortfolioOverview page when your search does not match my portfolio cards
-// 				height: 100vh;
-// 			}
-// 		}
-// 	}
-// }

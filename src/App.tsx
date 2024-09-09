@@ -31,17 +31,13 @@ function App() {
 				</div>
 
 				<div id="bottomContainer">
-					<CSSTransition
-						in={isEnter}
-						nodeRef={nodeRef}
-						timeout={300}
-						classNames="alert"
-						unmountOnExit
-						// onEnter={() => setShowButton(false)}
-						// onExited={() => setShowButton(true)}
-					>
+					<CSSTransition in={isEnter} nodeRef={nodeRef} timeout={400} unmountOnExit>
 						<div id="leftContainer" ref={nodeRef}>
-							<Navbar />
+							<CSSTransition in={isEnter} nodeRef={nodeRef} timeout={300} unmountOnExit>
+								<div id="navbarContainer" ref={nodeRef}>
+									<Navbar />
+								</div>
+							</CSSTransition>
 						</div>
 					</CSSTransition>
 
