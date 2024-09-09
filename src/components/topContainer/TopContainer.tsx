@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import { Logo, HamburgerMenu, Navbar } from "..";
+import { Logo, HamburgerMenu } from "..";
 
 export const TopContainer = () => {
 	//Bool state used for setting "in" prop of CSSTransition component to enter (true) or exit (false)

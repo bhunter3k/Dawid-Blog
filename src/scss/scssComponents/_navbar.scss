@@ -1,8 +1,6 @@
 @use "../scssGlobals/index" as g;
 
-.navbarDesktopContainer,
-.navbarMobileContainerInitial,
-.navbarMobileContainerAfter {
+.navbarDesktopContainer {
 	// color: var(--component-font-colour);
 	height: 100%;
 	// Takes into account the scrollbar
@@ -101,77 +99,5 @@
 	//Simulates 4 spaces in Portfolio links to make them look indented
 	.dashBoardLink {
 		padding-left: 18px;
-	}
-}
-
-.navbarMobileContainerInitial,
-.navbarMobileContainerAfter {
-	display: none;
-	border-top: 1px solid var(--accent-colour);
-	// Takes into account the scrollbar
-	width: calc(100vw - (100vw - 100%));
-}
-
-@media (max-width: g.$change-layout-breakpoint) {
-	.navbarDesktopContainer {
-		display: none;
-	}
-
-	.navbarMobileContainerInitial {
-		display: none;
-	}
-
-	.navbarMobileContainerAfter {
-		display: block;
-		margin-top: 0.5rem;
-	}
-
-	// === Enter Transition ===
-	.navbarMobile-enter {
-		max-height: 0px;
-		display: block;
-		ul li {
-			opacity: 0;
-		}
-	}
-	.navbarMobile-enter-active {
-		max-height: 551px;
-		transition: max-height 600ms;
-		ul li {
-			opacity: 1;
-			// need to delay opacity transition by 200ms to let navbar slide down,
-			// and only then increase opacity from 0 to 1.
-			transition: opacity 400ms 200ms;
-		}
-	}
-	.navbarMobile-enter-done {
-		max-height: 551px;
-		display: block;
-		ul li {
-			opacity: 1;
-		}
-	}
-	// === Exit Transition ===
-	.navbarMobile-exit {
-		max-height: 551px;
-		//need to delay the max-height transition to allow opacity transition to fire first,
-		// only then sliding the navbar back up
-		transition: max-height 500ms 100ms;
-		border-top: 1px solid var(--accent-colour);
-		ul li {
-			opacity: 1;
-			transition: opacity 300ms;
-		}
-	}
-	.navbarMobile-exit-active {
-		max-height: 0px;
-		border-top: none;
-
-		ul li {
-			opacity: 0;
-		}
-	}
-	.navbarMobile-exit-done {
-		display: none;
 	}
 }

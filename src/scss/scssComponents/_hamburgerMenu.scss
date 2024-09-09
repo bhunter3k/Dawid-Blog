@@ -2,18 +2,18 @@
 
 .hamburgerMenuBtn {
 	display: flex;
-	margin-right: 0.5rem;
 	background-color: transparent;
-	border: 2px solid var(--accent-colour);
-	border-radius: 0.5rem;
-
-	box-shadow: 3px 3px 10px currentColor;
+	border: 1px solid var(--accent-colour);
 
 	cursor: pointer;
 
-	transition: border 350ms ease-out;
+	// transition: border 350ms ease-in-out;
 
-	& .line {
+	.hamburgerMenuIcon {
+		border: 1px solid pink;
+	}
+
+	& .SVGLine {
 		color: var(--accent-colour);
 		transform-box: fill-box;
 		//ensures lines rotate around their centre
@@ -23,47 +23,30 @@
 	}
 
 	&[aria-expanded="false"] {
-		&:hover {
-			box-shadow: 0 0 10px greenyellow;
-			border: 2px solid greenyellow;
-			& .line {
-				color: greenyellow;
-			}
-		}
+		// &:hover {
+		// 	box-shadow: 0 0 10px greenyellow;
+		// 	border: 2px solid greenyellow;
+		// 	& .SVGLine {
+		// 		color: greenyellow;
+		// 	}
+		// }
 	}
 
 	&[aria-expanded="true"] {
-		box-shadow: 0 0 10px greenyellow;
-		border: 2px solid greenyellow;
-		transition: border 400ms ease-in, box-shadow 400ms ease-in;
-
-		&:hover {
-			border: 2px solid red;
-			box-shadow: 0 0 10px rgb(249, 130, 124);
-
-			& .line {
-				color: red;
-			}
-		}
-
-		& .line {
-			color: greenyellow;
+		& .SVGLine {
+			// stroke: greenyellow;
 			//transition: 1) hide middle line using opacity, 2) move top and bottom lines to middle, 3) rotate top and bottom lines
 			transition: color 400ms ease-in, transform 200ms ease-in 150ms, rotate 200ms ease-in 400ms, opacity 150ms;
 		}
 
-		& .line {
-			&.top {
-				transform: translateY(25px) rotate(45deg);
+		& .SVGLine {
+			&.Top {
+				stroke: "pink";
+				transform: translateY(0) rotate(-52deg); /* Move down and rotate to form '>' */
 			}
-			&.bottom {
-				transform: translateY(-25px) rotate(-45deg);
+			&.Bottom {
+				transform: translateY(0) rotate(52deg); /* Move up and rotate to form '>' */
 			}
-		}
-
-		//hide middle line
-		& .line.middle {
-			opacity: 0;
 		}
 	}
 }

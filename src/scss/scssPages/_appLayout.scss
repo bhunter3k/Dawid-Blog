@@ -8,7 +8,7 @@
 	height: 100%;
 
 	#topContainer {
-		position: fixed;
+		position: sticky;
 		top: 0%;
 
 		display: flex;
@@ -30,30 +30,48 @@
 	#bottomContainer {
 		display: flex;
 		justify-content: flex-start;
-		margin-top: 6rem;
 
 		#leftContainer {
 			display: flex;
 			flex-direction: column;
 			z-index: 999;
 
+			position: fixed;
+			height: 100%;
+
 			width: clamp(19rem, 25%, 25rem);
 
-			background-color: var(--component-colour);
+			// background-color: var(--component-colour);
 			border-right: 3px solid var(--accent-colour);
-
-			#navbarContainer {
-				margin-top: 6rem;
-
-				position: fixed;
-				top: 0%;
-				height: 100%;
-			}
 
 			hr {
 				width: 90%;
 				color: var(--accent-colour);
 			}
+		}
+
+		.alert-enter {
+			opacity: 0;
+			background-color: red;
+			transform: scale(0.9);
+		}
+		.alert-enter-active {
+			opacity: 1;
+			transform: translateX(0);
+			transition: opacity 300ms, transform 300ms;
+		}
+		.alert-enter-done {
+			background-color: red;
+			border: 5px solid pink;
+		}
+
+		.alert-exit {
+			opacity: 1;
+		}
+		.alert-exit-active {
+			opacity: 0;
+			transform: scale(0.9);
+			transition: opacity 300ms, transform 300ms;
 		}
 
 		#rightContainer {

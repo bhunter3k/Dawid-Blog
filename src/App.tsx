@@ -1,19 +1,49 @@
+import { useState, useRef } from "react";
 import { Route, Routes } from "react-router-dom";
-import { TopContainer, Navbar } from "./components/";
+import { TopContainer, HamburgerMenu, Logo, Navbar } from "./components/";
 import { Home, Dashboard, AboutMe, Contact } from "./pages/";
 
+import { CSSTransition } from "react-transition-group";
+
 function App() {
+	//Bool state used for setting "in" prop of CSSTransition component to enter (true) or exit (false)
+	const [isEnter, setIsEnter] = useState<boolean>(false);
+
+	const burgerClick = () => {
+		//Set to true if false, or set to false if true
+		setIsEnter(!isEnter);
+	};
+
+	//nodeRef is used to specify that animations should only be applied to the NavBarTemplate component
+	const nodeRef = useRef(null);
+
 	return (
 		<>
 			<div id="appContainer">
 				<div id="topContainer">
-					<TopContainer />
+					{/* <TopContainer /> */}
+
+					<HamburgerMenu onClick={burgerClick} isExpanded={isEnter} />
+					<Logo />
+					<p>YouTube</p>
+					<p>TikTok</p>
+					<p>GitHub</p>
 				</div>
 
 				<div id="bottomContainer">
-					<div id="leftContainer">
-						<Navbar />
-					</div>
+					<CSSTransition
+						in={isEnter}
+						nodeRef={nodeRef}
+						timeout={300}
+						classNames="alert"
+						unmountOnExit
+						// onEnter={() => setShowButton(false)}
+						// onExited={() => setShowButton(true)}
+					>
+						<div id="leftContainer" ref={nodeRef}>
+							<Navbar />
+						</div>
+					</CSSTransition>
 
 					<div id="rightContainer">
 						<div id="mainContentContainer">
