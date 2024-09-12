@@ -1,6 +1,32 @@
 @use "../scssGlobals/index" as g;
 
-.navbarDesktop {
+.enter {
+	#navbarContainer {
+		opacity: 0;
+	}
+}
+
+.enter-active {
+	#navbarContainer {
+		opacity: 1;
+		transition: opacity 350ms ease-in;
+	}
+}
+
+.exit {
+	#navbarContainer {
+		opacity: 1;
+	}
+}
+
+.exit-active {
+	#navbarContainer {
+		opacity: 0;
+		transition: opacity 100ms ease-out;
+	}
+}
+
+#navbarContainer {
 	// color: var(--component-font-colour);
 	height: 100%;
 	// Takes into account the scrollbar

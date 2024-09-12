@@ -22,30 +22,32 @@
 		transition: color 400ms ease-out, transform 200ms ease-out 200ms, rotate 200ms ease-in, opacity 200ms 400ms;
 	}
 
+	// "<"
 	&[aria-expanded="false"] {
-		// &:hover {
-		// 	box-shadow: 0 0 10px greenyellow;
-		// 	border: 2px solid greenyellow;
-		// 	& .SVGLine {
-		// 		color: greenyellow;
-		// 	}
-		// }
-	}
-
-	&[aria-expanded="true"] {
-		& .SVGLine {
-			// stroke: greenyellow;
-			//transition: 1) hide middle line using opacity, 2) move top and bottom lines to middle, 3) rotate top and bottom lines
-			transition: color 400ms ease-in, transform 200ms ease-in 150ms, rotate 200ms ease-in 400ms, opacity 150ms;
-		}
-
 		& .SVGLine {
 			&.Top {
-				stroke: "pink";
-				transform: translateY(0) rotate(-52deg); /* Move down and rotate to form '>' */
+				transform: translateY(0) rotate(0deg);
+				transition: transform 300ms ease-in-out;
+				stroke: pink;
 			}
 			&.Bottom {
-				transform: translateY(0) rotate(52deg); /* Move up and rotate to form '>' */
+				transform: translateY(0) rotate(0deg);
+				transition: transform 300ms ease-in-out;
+				stroke: pink;
+			}
+		}
+	}
+
+	// ">"
+	&[aria-expanded="true"] {
+		& .SVGLine {
+			&.Top {
+				transform: translateY(0) rotate(-52deg);
+				transition: transform 300ms ease-in-out;
+			}
+			&.Bottom {
+				transform: translateY(0) rotate(52deg);
+				transition: transform 300ms ease-in-out;
 			}
 		}
 	}

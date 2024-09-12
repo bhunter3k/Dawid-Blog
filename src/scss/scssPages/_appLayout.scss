@@ -39,7 +39,7 @@
 			position: fixed;
 			height: 100%;
 
-			padding-right: 10px;
+			padding-right: 5px;
 
 			background-color: var(--component-colour);
 			border-right: 3px solid var(--accent-colour);
@@ -51,22 +51,25 @@
 		}
 
 		.enter {
-			width: 0;
+			max-width: 0;
 		}
 
 		.enter-active {
-			width: clamp(19rem, 25%, 25rem);
-			transition: width 300ms ease-in;
+			max-width: 25rem;
+			// width: clamp(19rem, 25%, 25rem);
+			transition: max-width 200ms ease-in;
 		}
 
 		.exit {
-			width: clamp(19rem, 25%, 25rem);
+			max-width: 25rem;
+
+			// width: clamp(19rem, 25%, 25rem);
 		}
 
 		.exit-active {
-			width: 0;
-			color: transparent;
-			transition: width 300ms ease-out;
+			max-width: 0;
+
+			transition: max-width 300ms ease-out;
 		}
 
 		#rightContainer {

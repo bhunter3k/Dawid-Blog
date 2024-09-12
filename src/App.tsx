@@ -28,10 +28,11 @@ function App() {
 					<p>YouTube</p>
 					<p>TikTok</p>
 					<p>GitHub</p>
+					<p>LinkedIn</p>
 				</div>
 
 				<div id="bottomContainer">
-					<CSSTransition in={isEnter} nodeRef={nodeRef} timeout={400} unmountOnExit>
+					<CSSTransition in={isEnter} nodeRef={nodeRef} timeout={350} unmountOnExit>
 						<div id="leftContainer" ref={nodeRef}>
 							<CSSTransition in={isEnter} nodeRef={nodeRef} timeout={300} unmountOnExit>
 								<div id="navbarContainer" ref={nodeRef}>
