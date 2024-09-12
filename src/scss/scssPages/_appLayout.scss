@@ -72,7 +72,8 @@
 			transition: max-width 300ms ease-out;
 		}
 
-		#rightContainer {
+		#rightContainer,
+		#navbarExpandedRightContainer {
 			display: flex;
 			flex-direction: column;
 
@@ -86,6 +87,13 @@
 
 				border: 2px solid black;
 			}
+		}
+
+		#navbarExpandedRightContainer {
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+			z-index: 100;
 		}
 	}
 }
