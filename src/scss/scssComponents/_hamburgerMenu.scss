@@ -14,12 +14,8 @@
 	}
 
 	& .SVGLine {
-		color: var(--accent-colour);
-		transform-box: fill-box;
-		//ensures lines rotate around their centre
 		transform-origin: center center;
-		//transition: 1) rotate top and middle lines back, 2) move top and bottom lines back, 3) show middle line using opacity
-		transition: color 400ms ease-out, transform 200ms ease-out 200ms, rotate 200ms ease-in, opacity 200ms 400ms;
+		transform-box: fill-box;
 	}
 
 	// "<"
@@ -27,12 +23,12 @@
 		& .SVGLine {
 			&.Top {
 				transform: translateY(0) rotate(0deg);
-				transition: transform 300ms ease-in-out;
+				transition: transform 400ms ease-in-out;
 				stroke: pink;
 			}
 			&.Bottom {
 				transform: translateY(0) rotate(0deg);
-				transition: transform 300ms ease-in-out;
+				transition: transform 400ms ease-in-out;
 				stroke: pink;
 			}
 		}
@@ -43,11 +39,11 @@
 		& .SVGLine {
 			&.Top {
 				transform: translateY(0) rotate(-52deg);
-				transition: transform 300ms ease-in-out;
+				transition: transform 400ms ease-in-out;
 			}
 			&.Bottom {
 				transform: translateY(0) rotate(52deg);
-				transition: transform 300ms ease-in-out;
+				transition: transform 400ms ease-in-out;
 			}
 		}
 	}

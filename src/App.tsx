@@ -42,7 +42,15 @@ function App() {
 						</div>
 					</CSSTransition>
 
-					<div id={!showNavbar ? "rightContainer" : "navbarExpandedRightContainer"}>
+					<div id="rightContainer">
+						{showNavbar && (
+							<div
+								id="navbarExpandedOverlay"
+								onClick={() => {
+									setShowNavbar(false);
+								}}
+							></div>
+						)}
 						<div id="mainContentContainer">
 							<Routes>
 								<Route path="/" element={<Home />} />
