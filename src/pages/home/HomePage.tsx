@@ -1,13 +1,8 @@
-import dawidPhoto from "../../assets/dawidPhoto.jpg";
-
 export const Home = () => {
 	return (
-		<>
-			<h1>Home Page</h1>
-			<hr />
-			<p>test</p>
-
-			{/* <img src={dawidPhoto} alt="Dawid's Blog Logo" id="blogLogo" loading="eager" /> */}
-		</>
+		<div id="homepageCenterTextContainer">
+			<h1>Welcome to Dawid's Blog</h1>
+			<h2>test</h2>
+		</div>
 	);
 };

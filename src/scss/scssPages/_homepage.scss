@@ -1,0 +1,18 @@
+@use "../scssGlobals/index";
+
+#rightContainer {
+	margin: auto;
+}
+
+#mainContentContainer {
+	width: 100%;
+	margin: auto;
+
+	#homepageCenterTextContainer {
+		border: 1px solid brown;
+
+		h1 {
+			text-align: center;
+		}
+	}
+}
